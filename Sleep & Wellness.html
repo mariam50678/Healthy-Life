@@ -142,6 +142,117 @@
 <div class="result-box" id="outputBox"></div>
 
 
+<script>
+
+    var age = parseInt(prompt("How old are you?"));
+    var weight = parseInt(prompt("What is your weight (kg)?"));
+    var height = parseInt(prompt("What is your height (cm)?"));
+    var sleep = parseInt(prompt("How many hours do you sleep per day?"));
+    var sleepAdvice = "";
+
+    if (age <= 12) {
+        if (sleep < 9) {
+            sleepAdvice = "You need more sleep. Try to get 9–12 hours of sleep to help your body grow healthy and strong.";
+        }
+        else if (sleep > 12) {
+            sleepAdvice = "Oversleeping may make you feel tired during the day 😴 Try to keep your sleep between 9–12 hours and stay active.";
+        }
+        else {
+            sleepAdvice = "Great! You are getting healthy sleep for your age.";
+        }
+    }
+
+    else if (age <= 18) {
+        if (sleep < 8) {
+            sleepAdvice = "You need more sleep. Teens need 8–10 hours to stay focused and energetic.";
+        }
+        else if (sleep > 10) {
+            sleepAdvice = "Oversleeping may leave you feeling tired during the day 😅 Try to balance your sleep schedule and stay active.";
+        }
+        else {
+            sleepAdvice = "Nice! Your sleep hours are healthy for your age.";
+        }
+    }
+
+    else {
+        if (sleep < 7) {
+            sleepAdvice = "You need more sleep. Adults feel their best when they get 7–9 hours each night.";
+        }
+        else if (sleep > 9) {
+            sleepAdvice = "Oversleeping may reduce your energy. Try to stay within 7–9 hours for best health.";
+        }
+        else {
+            sleepAdvice = "Perfect! You are getting a healthy amount of sleep.";
+        }
+    }
+
+
+    var idealWeight = height - 100;
+
+    var wellnessScore = "";
+    var wellnessMessage = "";
+
+    if (weight < idealWeight) {
+
+        wellnessScore = "Under";
+        wellnessMessage = "Your weight is below the ideal weight.";
+
+    }
+    else if (weight == idealWeight) {
+
+        wellnessScore = "Ideal";
+        wellnessMessage = "Your weight is ideal for your height.";
+
+    }
+    else {
+
+        wellnessScore = "Above";
+        wellnessMessage = "Your weight is above the ideal weight.";
+
+    }
+
+
+    var energyPrediction = "";
+    var energyMessage = "";
+
+    if (sleep < 7) {
+        energyPrediction = "Low";
+        energyMessage = "You may experience low energy during the day due to short sleep.";
+    }
+    else if (sleep >= 7 && sleep <= 9) {
+        energyPrediction = "Stable";
+        energyMessage = "Your sleep supports stable energy throughout the day.";
+    }
+    else {
+        energyPrediction = "Sluggish";
+        energyMessage = "Oversleeping may make you feel less alert during the day.";
+    }
+
+
+    var nutritionSleep = "";
+
+    if (sleep < 7) {
+        nutritionSleep = "Your body may crave sugar today due to low sleep. Try nuts or fruits instead of sweets to avoid sudden energy drops.";
+    } else {
+        nutritionSleep = "Your sleep supports stable appetite and energy today.";
+    }
+
+
+    document.getElementById("outputBox").innerHTML =
+        "<h3>Your Daily Report 🌿</h3>" +
+        "<p><strong>Age:</strong> " + age + "</p>" +
+        "<p><strong>Weight:</strong> " + weight + " kg</p>" +
+        "<p><strong>Height:</strong> " + height + " cm</p>" +
+        "<p><strong>Sleep Hours:</strong> " + sleep + "</p>" +
+        "<hr>" +
+        "<p><strong>🛏️ Sleep Advice:</strong><br>" + sleepAdvice + "</p>" +
+        "<p><strong>🥗 Linked Nutrition (Sleep):</strong><br>" + nutritionSleep + "</p>" +
+        "<p><strong>💚 Wellness Score:</strong> " + wellnessScore + "<br>" +
+        wellnessMessage + "</p>" +
+        "<p><strong>⚡ Energy Prediction:</strong> " + energyPrediction + "<br>" +
+        energyMessage + "</p>";
+
+</script>
 
 
 
