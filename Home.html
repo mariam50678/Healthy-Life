@@ -189,5 +189,30 @@
 
 </div>
 
+<script>
+
+  function welcomeMessage(){
+    window.alert("Welcome to Healthy Life!");
+  }
+
+  var tips = [
+    "Drink at least 8 glasses of water every day.",
+    "Take a 10-minute walk after your meals.",
+    "Eat more fruits and vegetables for better energy.",
+    "Try to sleep and wake up at the same time daily.",
+    "Limit your intake of processed sugars and soda.",
+    "Take deep breaths to reduce stress during the day."
+  ];
+
+  function showTip(){
+
+    var randomTip =
+            tips[Math.floor(Math.random() * tips.length)];
+
+    document.getElementById("tip").innerHTML = randomTip;
+
+  }
+
+</script>
 </body>
 </html>
