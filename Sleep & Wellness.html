@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,22 +7,26 @@
 
     <style>
 
+        /* Reset default spacing and set the main font */
         *{
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
         }
 
+        /* page background color */
         body{
             background-color: #f5f5f5;
         }
 
+        /* Navigation bar styling */
         .navbar{
             background-color: white;
             padding: 20px 40px;
             overflow: hidden;
         }
 
+        /* Website logo styling */
         .logo{
             float: left;
             color: #8aad67;
@@ -34,6 +39,7 @@
             vertical-align: middle;
         }
 
+        /* Navigation menu styling */
         .menu{
             float: right;
             margin-top: 25px;
@@ -46,11 +52,13 @@
             font-weight: bold;
         }
 
+        /* Change link color when the mouse hovers over it */
         .menu a:hover{
             color: #7ca65b;
             text-decoration: underline;
         }
 
+        /* Top banner layout and styling */
         .top-banner {
             display: flex;
             align-items: center;
@@ -61,6 +69,7 @@
             margin: 30px;
         }
 
+        /* Banner text styling */
         .banner-text {
             width: 45%;
         }
@@ -77,11 +86,13 @@
             line-height: 1.6;
         }
 
+        /* Banner image styling */
         .banner-img {
             width: 20%;
             border-radius: 15px;
         }
 
+        /* Daily report container styling */
         .result-box {
             background: white;
             width: 80%;
@@ -91,6 +102,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
+        /* Report heading styling */
         .result-box h3 {
             color: #8aad67;
             margin-bottom: 10px;
@@ -102,6 +114,7 @@
             line-height: 1.7;
         }
 
+        /* Footer styling */
         footer {
             text-align: center;
             padding: 20px;
@@ -114,6 +127,7 @@
 </head>
 <body>
 
+<!-- Website navigation bar -->
 <div class="navbar">
 
     <div class="logo">
@@ -121,7 +135,7 @@
         <span>Healthy Life</span>
     </div>
 
-
+    <!-- Navigation links between website pages -->
     <div class="menu">
         <a href="index.html">Home</a>
         <a href="Nutrition.html">Nutrition</a>
@@ -130,26 +144,32 @@
 
 </div>
 
+<!-- Main banner section -->
 <section class="top-banner">
     <div class="banner-text">
         <h2>Balance Your Day</h2>
-        <p>uality sleep renews your body and keeps your energy steady throughout the day. ⭐</p>
+        <p>Quality sleep renews your body and keeps your energy steady throughout the day. ⭐</p>
     </div>
 
     <img src="moon.jpeg" alt="sleep Image" class="banner-img">
 </section>
 
+<!-- This container displays the personalized wellness report -->
 <div class="result-box" id="outputBox"></div>
 
 
 <script>
 
+    // Collect personal information from the user
     var age = parseInt(prompt("How old are you?"));
     var weight = parseInt(prompt("What is your weight (kg)?"));
     var height = parseInt(prompt("What is your height (cm)?"));
     var sleep = parseInt(prompt("How many hours do you sleep per day?"));
+
+    // Variable to store sleep recommendations
     var sleepAdvice = "";
 
+    // Check sleep recommendations based on the user's age
     if (age <= 12) {
         if (sleep < 9) {
             sleepAdvice = "You need more sleep. Try to get 9–12 hours of sleep to help your body grow healthy and strong.";
@@ -187,11 +207,14 @@
     }
 
 
+    // Calculate the estimated ideal weight based on height
     var idealWeight = height - 100;
 
+    // Variables to store the wellness score and its explanation
     var wellnessScore = "";
     var wellnessMessage = "";
 
+    // Compare the user's weight with the estimated ideal weight
     if (weight < idealWeight) {
 
         wellnessScore = "Under";
@@ -212,6 +235,7 @@
     }
 
 
+    // Predict the user's energy level based on sleep duration
     var energyPrediction = "";
     var energyMessage = "";
 
@@ -229,6 +253,7 @@
     }
 
 
+    // Generate nutrition advice based on sleep duration
     var nutritionSleep = "";
 
     if (sleep < 7) {
@@ -238,6 +263,7 @@
     }
 
 
+    // Display the personalized wellness report on the webpage
     document.getElementById("outputBox").innerHTML =
         "<h3>Your Daily Report 🌿</h3>" +
         "<p><strong>Age:</strong> " + age + "</p>" +
@@ -254,10 +280,5 @@
 
 </script>
 
-
-
-
 </body>
 </html>
-
-
